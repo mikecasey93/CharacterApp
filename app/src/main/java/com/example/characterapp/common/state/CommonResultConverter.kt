@@ -1,6 +1,7 @@
 package com.example.characterapp.common.state
 
 import com.example.characterapp.domain.entity.Result
+import com.example.characterapp.domain.usecase.simpson.GetSimpsonUseCase
 
 abstract class CommonResultConverter<T : Any, R : Any> {
 
@@ -14,6 +15,8 @@ abstract class CommonResultConverter<T : Any, R : Any> {
             }
         }
     }
+
+
 
     abstract fun convertSuccess(data: T): R
 }

@@ -28,7 +28,7 @@ class NetworkModule {
 
     @Provides
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl("http://api.duckduckgo.com/")
+        .baseUrl("https://api.duckduckgo.com/")
         .client(okHttpClient)
         .addConverterFactory(GsonConverterFactory.create())
         .build()

@@ -1,26 +1,21 @@
 package com.example.characterapp.app.ui.viewmodel
 
 import androidx.lifecycle.viewModelScope
-import com.example.characterapp.app.converters.SimpsonListConverter
 import com.example.characterapp.app.converters.WireListConverter
-import com.example.characterapp.app.model.SimpsonListModel
 import com.example.characterapp.app.model.WireListModel
-import com.example.characterapp.app.ui.uiaction.simpson.SimpsonListAction
-import com.example.characterapp.app.ui.uiaction.simpson.SimpsonListSingleEvent
 import com.example.characterapp.app.ui.uiaction.wire.WireListAction
 import com.example.characterapp.app.ui.uiaction.wire.WireListSingleEvent
-import com.example.characterapp.common.nav.routes.SimpsonInput
-import com.example.characterapp.common.nav.routes.SimpsonsNavRoute
 import com.example.characterapp.common.nav.routes.WireInput
 import com.example.characterapp.common.nav.routes.WireNavRoute
 import com.example.characterapp.common.state.MviViewModel
 import com.example.characterapp.common.state.UiState
-import com.example.characterapp.domain.usecase.simpson.GetSimpsonUseCase
 import com.example.characterapp.domain.usecase.wire.GetWireUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class WireListViewModel @Inject constructor(
     private val useCase: GetWireUseCase,
     private val converter: WireListConverter

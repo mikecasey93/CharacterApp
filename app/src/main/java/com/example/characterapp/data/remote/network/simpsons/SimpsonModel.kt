@@ -36,8 +36,6 @@ data class SimpsonModel(
     val imageWidth: Int? = 0,
     @SerializedName("Infobox")
     val infobox: String? = "",
-    @SerializedName("meta")
-    val meta: MetaModel? = MetaModel(),
     @SerializedName("Redirect")
     val redirect: String? = "",
     @SerializedName("RelatedTopics")
