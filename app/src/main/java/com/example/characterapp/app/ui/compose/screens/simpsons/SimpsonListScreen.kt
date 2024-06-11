@@ -48,12 +48,6 @@ fun SimpsonListScreen(
     }
     var text by remember { mutableStateOf("") }
     var active by remember { mutableStateOf(false) }
-//    var items = remember {
-//        mutableStateOf(Simpson) {
-//
-//        })
-//    }
-
 
     viewModel.uiStateFlow.collectAsState().value.let { state ->
         CommonScreen(state = state) {

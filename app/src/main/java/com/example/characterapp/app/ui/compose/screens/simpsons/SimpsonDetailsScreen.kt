@@ -4,8 +4,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.MaterialTheme
@@ -15,7 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import coil.compose.rememberAsyncImagePainter
 import coil.request.ImageRequest
 import com.example.characterapp.R
@@ -34,19 +38,23 @@ fun SimpsonDetailsScreen(simpsonInput: SimpsonInput) {
         Text(
             "Name: ${cutString(simpsonInput.firstURL)}",
             modifier = Modifier
-                .align(alignment = Alignment.CenterHorizontally)
+                .align(alignment = Alignment.CenterHorizontally),
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold
         )
-        ImageWithPlaceholder(
-            imageUrl = simpsonInput.icon,
-            placeholder = R.drawable.no_image,
-            modifier = Modifier
-                .align(alignment = Alignment.CenterHorizontally)
-        )
+        Spacer(modifier = Modifier.height(40.dp))
+//        ImageWithPlaceholder(
+//            imageUrl = simpsonInput.icon,
+//            placeholder = R.drawable.no_image,
+//            modifier = Modifier
+//                .align(alignment = Alignment.CenterHorizontally)
+//        )
         Text(
             "Description: ${simpsonInput.text}",
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier
-                .align(alignment = Alignment.CenterHorizontally)
+                .align(alignment = Alignment.CenterHorizontally),
+            fontSize = 20.sp
 
         )
     }

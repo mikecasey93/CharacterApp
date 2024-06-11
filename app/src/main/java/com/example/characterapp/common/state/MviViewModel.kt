@@ -2,6 +2,7 @@ package com.example.characterapp.common.state
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.characterapp.app.model.WireListModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -51,4 +52,5 @@ abstract class MviViewModel<T : Any, S : UiState<T>, A : UiAction, E: UiSingleEv
             _singleEventFlow.send(event)
         }
     }
+
 }

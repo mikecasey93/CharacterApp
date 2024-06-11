@@ -2,6 +2,7 @@ package com.example.characterapp.app.ui.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import com.example.characterapp.app.converters.WireListConverter
+import com.example.characterapp.app.model.Wire
 import com.example.characterapp.app.model.WireListModel
 import com.example.characterapp.app.ui.uiaction.wire.WireListAction
 import com.example.characterapp.app.ui.uiaction.wire.WireListSingleEvent
@@ -21,6 +22,7 @@ class WireListViewModel @Inject constructor(
     private val converter: WireListConverter
 ): MviViewModel<WireListModel, UiState<WireListModel>, WireListAction, WireListSingleEvent>() {
 
+    private val originalList = mutableListOf<Wire>()
     override fun initState(): UiState<WireListModel> = UiState.Loading
 
     override fun handleAction(action: WireListAction) {
@@ -44,7 +46,7 @@ class WireListViewModel @Inject constructor(
         }
     }
 
-    private fun loadWires() {
+    fun loadWires() {
         viewModelScope.launch {
             useCase.execute(GetWireUseCase.Request)
                 .map{
@@ -55,4 +57,13 @@ class WireListViewModel @Inject constructor(
                 }
         }
     }
+
+//    fun filterWire(query: String) {
+//        val filteredList = if (query.isEmpty()) {
+//            originalList
+//        } else {
+//            originalList.filter { it.firstUrl!!.contains(query, ignoreCase = true) }
+//        }
+//        submitState(WireListModel(filteredList))
+//    }
 }

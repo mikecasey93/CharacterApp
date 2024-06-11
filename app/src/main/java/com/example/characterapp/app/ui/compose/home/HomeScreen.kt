@@ -21,6 +21,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.characterapp.common.nav.NavRoutes
 
@@ -40,7 +41,8 @@ fun HomeScreen(navController: NavController) {
             "CHARACTER APP",
             style = MaterialTheme.typography.bodyLarge,
             modifier = Modifier.padding(top = 60.dp),
-            color = Color.White
+            color = Color.Black,
+            fontSize = 45.sp
         )
         Box(
             modifier = Modifier

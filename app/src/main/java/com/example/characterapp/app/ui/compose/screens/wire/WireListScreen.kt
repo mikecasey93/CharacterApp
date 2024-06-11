@@ -96,6 +96,8 @@ fun WireListScreen(
                 is WireListSingleEvent.GoToDetailsScreen -> {
                     navController.navigate(it.route)
                 }
+
+                else -> {}
             }
         }
     }
@@ -130,7 +132,7 @@ fun WireItem(wire: Wire, onItemClick: (Wire) -> Unit) {
                 .fillMaxWidth()
                 .padding(16.dp)
         ) {
-            Text("Name: ${cutString(wire.firstUrl)}")
+            Text("${cutString(wire.firstUrl)}")
         }
     }
 }
