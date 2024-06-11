@@ -130,7 +130,7 @@ fun SimpsonListScreen(
                     .fillMaxWidth()
                     .padding(16.dp)
             ) {
-                Text("Name: ${cutString(simpson.firstUrl)}")
+                Text("${cutString(simpson.firstUrl)}")
             }
         }
     }

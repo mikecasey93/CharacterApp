@@ -36,7 +36,7 @@ fun SimpsonDetailsScreen(simpsonInput: SimpsonInput) {
             .padding(16.dp)
     ) {
         Text(
-            "Name: ${cutString(simpsonInput.firstURL)}",
+            "${cutString(simpsonInput.firstURL)}",
             modifier = Modifier
                 .align(alignment = Alignment.CenterHorizontally),
             fontSize = 30.sp,
@@ -50,7 +50,7 @@ fun SimpsonDetailsScreen(simpsonInput: SimpsonInput) {
 //                .align(alignment = Alignment.CenterHorizontally)
 //        )
         Text(
-            "Description: ${simpsonInput.text}",
+            "${simpsonInput.text}",
             style = MaterialTheme.typography.bodyMedium,
             modifier = Modifier
                 .align(alignment = Alignment.CenterHorizontally),
