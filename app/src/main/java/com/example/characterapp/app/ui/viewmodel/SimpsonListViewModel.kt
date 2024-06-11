@@ -44,7 +44,7 @@ class SimpsonListViewModel @Inject constructor(
         }
     }
 
-    private fun loadSimpsons() {
+    fun loadSimpsons() {
         viewModelScope.launch {
             useCase.execute(GetSimpsonUseCase.Request)
                 .map{

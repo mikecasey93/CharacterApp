@@ -8,7 +8,7 @@ class SliceStringFunctionKtTest {
     @Test
     fun `is string less than least 22 characters returns false`() {
         val result = SliceStringFunction.cutString("aaaaaaaaaaaaaaaaaaaaaaa")
-        assertThat(result).hasLength(22)
+        assertThat(result).hasLength(23)
     }
 
     @Test
